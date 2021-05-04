@@ -81,4 +81,9 @@ tags
 .history
 .ionide
 
+### Metals ###
+.metals/
+.bloop/
+project/**/metals.sbt
+
 # End of https://www.toptal.com/developers/gitignore/api/sublimetext,visualstudiocode,phpunit,vim
