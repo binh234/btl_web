@@ -1,0 +1,67 @@
+.btn-main {
+    background-color: #e96b56;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btn-main:hover {
+    background-color: #e6573f;
+    color: #fff;
+}
+
+.services .card-body .card-title a {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 48px;
+    color: #545454;
+    transition: 0.3s;
+}
+
+.services .card-body .card-title a:hover {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #e96b56;
+}
+
+
+/*--------------------------------------------------------------
+# Maintenance booking form
+--------------------------------------------------------------*/
+
+.form-title {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-title i {
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    background: #e96b56;
+    border-radius: 50%;
+    font-size: 11px;
+    line-height: 140%;
+    color: #fff;
+    margin-right: 20px;
+    font-style: normal;
+}
+
+.col-form-label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.required label::after {
+    content: "*";
+    color: #fe0000;
+    padding-left: 2px;
+}
