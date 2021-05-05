@@ -23,6 +23,7 @@
     <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/select2/css/select2.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
@@ -122,7 +123,7 @@
                 <div class="row">
                     <form class="w-100" action="" method="post">
                         <div class="row w-100">
-                            <div class="col-lg-6 col-12">
+                            <div class="col-lg-6 col-12" data-aos="fade-up">
                                 <label class="form-title d-flex">
                                     <i class="d-flex">1</i>
                                     <span>Thông tin khách hàng</span>
@@ -150,7 +151,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-12">
+                            <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="100">
                                 <label class="form-title d-flex">
                                     <i class="d-flex">2</i>
                                     <span>Thông tin xe</span>
@@ -159,16 +160,23 @@
                                     <label class="col-lg-2 col-12 col-form-label" for="product">Mẫu xe</label>
                                     <div class="col-lg-10 col-12 form-group">
                                         <select class="custom-select w-100" id="product" name="product">
-                                            <option value="FADIL">FADIL</option>
-                                            <option value="LUX-A">LUX A2.0</option>
-                                            <option value="LUX-SA">LUX SA2.0</option>
+                                            <optgroup label="Ô tô">
+                                                <option value="FADIL">FADIL</option>
+                                                <option value="LUX-A">LUX A2.0</option>
+                                                <option value="LUX-SA">LUX SA2.0</option>
+                                            </optgroup>
+                                            <optgroup label="Xe máy">
+                                                <option value="Theon">Theon</option>
+                                                <option value="Felix">Feliz</option>
+                                                <option value="Ludo">Ludo</option>
+                                            </optgroup>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row required">
                                     <label class="col-lg-2 col-12 col-form-label" for="distance">Số KM</label>
                                     <div class="col-lg-10 col-12 form-group">
-                                        <input type="number" name="distance" class="form-control" id="distance" placeholder="Số KM" data-rule="required" data-msg="Vui lòng nhập số km đã đi" />
+                                        <input type="number" name="distance" class="form-control" id="distance" placeholder="Số Km đã đi" data-rule="required" data-msg="Vui lòng nhập số km đã đi" />
                                         <div class="validate"></div>
                                     </div>
                                 </div>
@@ -182,7 +190,7 @@
                             </div>
                         </div>
                         <div class="row w-100 mt-4">
-                            <div class="col-lg-6 col-12">
+                            <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="100">
                                 <label class="form-title d-flex">
                                     <i class="d-flex">3</i>
                                     <span>Lựa chọn dịch vụ</span>
@@ -208,7 +216,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-12">
+                            <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="200">
                                 <label class="form-title d-flex">
                                     <i class="d-flex">4</i>
                                     <span>Chọn địa điểm, đặt lịch</span>
@@ -216,14 +224,14 @@
                                 <div class="row required">
                                     <label class="col-lg-2 col-12 col-form-label" for="location">Tại</label>
                                     <div class="col-lg-10 col-12 form-group">
-                                        <div class="row no-gutters">
+                                        <div class="row">
                                             <div class="col-lg-6 col-12 pr-1">
                                                 <select name="city" id="city" class="placeholder-select w-100" data-placeholder="Tỉnh Thành">
                                                     <option value="HN">Hà Nội</option>
                                                     <option value="HCM">Hồ Chí Minh</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-6 col-12 custom-col">
+                                            <div class="col-lg-6 col-12 pl-0">
                                                 <select name="state" id="district" class="placeholder-select w-100" data-placeholder="Quận Huyện">
                                                     <optgroup label="Hà Nội">
                                                         <option value="GiaLam">Gia Lâm</option>
@@ -280,7 +288,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center mt-3">
+                        <div class="row justify-content-center mt-3" data-aos="fade-up" data-aos-delay="200">
                             <input type="submit" class="btn btn-main mt-4" value="Đăng ký lịch hẹn">
                         </div>
                     </form>
@@ -385,6 +393,7 @@
     <script src="assets/vendor/counterup/counterup.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/select2/js/select2.full.min.js"></script>
 
     <!-- Template Main JS File -->
@@ -393,7 +402,8 @@
         $(document).ready(function() {
             $('.placeholder-select').select2({
                 allowClear: true,
-                scrollAfterSelect: true
+                scrollAfterSelect: true,
+                width: '100%',
             });
         });
     </script>
