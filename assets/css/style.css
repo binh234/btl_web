@@ -139,7 +139,6 @@ h6 {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
-    border-left: 8px solid #e96b56;
 }
 
 #header .logo h1 a,
@@ -2267,3 +2266,33 @@ section {
     font-size: 13px;
     color: #fff;
 }
+.positionimg{
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .positionimg > div{
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    right: 25%;
+    color: white;
+    font-family: "Raleway";
+    text-align: center
+  }
+  .positionimg >img{
+    display: block;
+    max-width:100%;
+    max-height:558px;
+    width: auto;
+    height: auto;
+  } 
+  .text {
+    text-align: center;
+  }
+  .bgabout{
+    background-color: #DBE1E3;
+  }
+  
+  
