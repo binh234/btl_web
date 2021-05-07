@@ -41,6 +41,38 @@
 
 
 /*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+
+.skills .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #545454;
+    font-family: "Arial", sans-serif;
+    margin-bottom: 20px;
+}
+
+.skills .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills .content ul li {
+    padding-bottom: 10px;
+}
+
+.skills .content ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #e96b56;
+}
+
+.skills .content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
 # Maintenance booking form
 --------------------------------------------------------------*/
 
