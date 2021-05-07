@@ -2266,13 +2266,15 @@ section {
     font-size: 13px;
     color: #fff;
 }
-.positionimg{
+
+.positionimg {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
     position: relative;
-  }
-  .positionimg > div{
+}
+
+.positionimg>div {
     position: absolute;
     top: 35%;
     left: 25%;
@@ -2280,19 +2282,20 @@ section {
     color: white;
     font-family: "Raleway";
     text-align: center
-  }
-  .positionimg >img{
+}
+
+.positionimg>img {
     display: block;
-    max-width:100%;
-    max-height:558px;
+    max-width: 100%;
+    max-height: 558px;
     width: auto;
     height: auto;
-  } 
-  .text {
+}
+
+.text {
     text-align: center;
-  }
-  .bgabout{
-    background-color: #DBE1E3;
-  }
-  
-  
+}
+
+.bgabout {
+    background-color: #fff;
+}
