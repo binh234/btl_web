@@ -33,18 +33,17 @@
 <body>
 
     <!-- ======= Top Bar ======= -->
-    <section id="topbar" class="d-none d-lg-block">
-        <div class="container d-flex">
-            <div class="contact-info mr-auto">
-                <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
-                <i class="icofont-phone"></i> +1 5589 55488 55
+    <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope"></i><a href="mailto:cskh@vinfast.vn"> cskh@vinfast.vn</a>
+                <i class="bi bi-phone"></i><span>1900-232389</span>
             </div>
-            <div class="social-links">
-                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="#" class="skype"><i class="icofont-skype"></i></a>
-                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.facebook.com/VinFastAuto.Official/" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCA5OijDHvvWJ3vy5iVdWcAQ" class="youtube"><i class="bi-youtube"></i></i></a>
             </div>
         </div>
     </section>
@@ -54,49 +53,33 @@
         <div class="container d-flex">
 
             <div class="logo mr-auto">
-                <h1 class="text-light"><a href="index.html"><span>Eterna</span></a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                <h1>
+                    <img src="assets/img/vin_logo.png" alt="logo">
+                    <a href="index.html">Vinfast</a>
+                </h1>
             </div>
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-
-                    <li class="drop-down"><a href="#">About</a>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li class="drop-down active"><a href="services.html">Dịch vụ</a>
                         <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Team</a></li>
-
-                            <li class="drop-down"><a href="#">Drop Down 2</a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="services.html">Dịch vụ</a></li>
+                            <li class="active"><a href="#">Đặt lịch bảo dưỡng</a></li>
                         </ul>
                     </li>
-
-                    <li class="drop-down active"><a href="#">Dịch vụ</a>
+                    <li class="drop-down"><a href="portfolio.html">Sản phẩm</a>
                         <ul>
-                            <li class="active"><a href="#">Dịch vụ</a></li>
-                            <li><a href="service-book.html">Đặt lịch bảo dưỡng</a></li>
-                        </ul>
-                    </li>
-                    <li class="drop-down"><a href="#">Sản phẩm</a>
-                        <ul>
-                            <li><a href="#">Ô tô</a></li>
+                            <li><a href="portfolio.html">Ô tô</a></li>
                             <li><a href="motor.html">Xe máy điện</a></li>
                         </ul>
                     </li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-
+                    <li><a href="pricing.html">Thẻ thành viên</a></li>
+                    <li><a href="blog.html">Ưu đãi</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
                 </ul>
+
             </nav>
             <!-- .nav-menu -->
 
@@ -267,7 +250,7 @@
 
                 <div class="section-title">
                     <h2>Câu hỏi thường gặp</h2>
-                    <p>Nói đến việc bảo dưỡng xe ô tô nghe chừng rất đơn giản. Tuy nhiên vẫn có khá nhiều thắc mắc về vấn đề này, nhất là với những người mới lái xe. Eterna đã tìm ra 5 vấn đề thường gặp nhất, với mong muốn mang lại cho quý khách chiếc xe
+                    <p>Nói đến việc bảo dưỡng xe ô tô nghe chừng rất đơn giản. Tuy nhiên vẫn có khá nhiều thắc mắc về vấn đề này, nhất là với những người mới lái xe. VinFast đã tìm ra 5 vấn đề thường gặp nhất, với mong muốn mang lại cho quý khách chiếc xe
                         êm ái và hoạt động vẫn bền bỉ sau nhiều năm sử dụng.</p>
                 </div>
 
@@ -307,8 +290,8 @@
                             <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Khi làm bảo dưỡng xe có nhất định phải đưa xe đến Đại lý mua xe hay không? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-4" class="collapse" data-parent=".faq-list">
                                 <p>
-                                    Để đảm bảo chất lượng sửa chữa và vận hành của xe cũng như các quyền lợi Bảo hành của xe, Eterna Việt Nam khuyến cáo Quý khách nên thực hiện bảo dưỡng xe định kỳ theo tiêu chuẩn của Nhà sản xuất tại các Đại lý hoặc chi nhánh ủy quyền của Eterna trên toàn
-                                    quốc.
+                                    Để đảm bảo chất lượng sửa chữa và vận hành của xe cũng như các quyền lợi Bảo hành của xe, VinFast Việt Nam khuyến cáo Quý khách nên thực hiện bảo dưỡng xe định kỳ theo tiêu chuẩn của Nhà sản xuất tại các Đại lý hoặc chi nhánh ủy quyền của VinFast trên
+                                    toàn quốc.
                                 </p>
                             </div>
                         </li>
@@ -317,8 +300,8 @@
                             <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Sau bao lâu thì phải mang xe đến làm bảo dưỡng định kỳ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-5" class="collapse" data-parent=".faq-list">
                                 <p>
-                                    Eterna khuyến nghị Quý khách thực hiện bảo dưỡng cho chiếc xe của mình sau mỗi 5,000km hoặc 6 tháng tùy theo điều kiện nào tới trước. Taị các lần bảo dưỡng này, xe của Quý khách sẽ được thay thế/ bổ sung các loại dầu & hóa chất cũng như kiểm tra/ vệ sinh
-                                    các hệ thống khác trên xe, tùy thuộc vào cấp bảo dưỡng đó là nhỏ, trung bình, trung bình lớn hay lớn.
+                                    VinFast khuyến nghị Quý khách thực hiện bảo dưỡng cho chiếc xe của mình sau mỗi 5,000km hoặc 6 tháng tùy theo điều kiện nào tới trước. Taị các lần bảo dưỡng này, xe của Quý khách sẽ được thay thế/ bổ sung các loại dầu & hóa chất cũng như kiểm tra/ vệ
+                                    sinh các hệ thống khác trên xe, tùy thuộc vào cấp bảo dưỡng đó là nhỏ, trung bình, trung bình lớn hay lớn.
                                 </p>
                             </div>
                         </li>

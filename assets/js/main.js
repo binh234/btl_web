@@ -1,6 +1,6 @@
 /**
- * Template Name: Eterna - v2.2.1
- * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
+ * Template Name: VinFast - v2.2.1
+ * Template URL: https://bootstrapmade.com/VinFast-free-multipurpose-bootstrap-template/
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
  */
