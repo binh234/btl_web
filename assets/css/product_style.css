@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+# Product
+--------------------------------------------------------------*/
+
+.product-title {
+    margin-bottom: 16px;
+}
+
+.product-title p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.product-title .subtitle {
+    font-size: 27px;
+}
+
+.product-title .product-name {
+    font-size: 30px;
+    color: purple;
+}
+
+.product-title h1 {
+    color: red;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+ul.product-details {
+    list-style: none;
+    font-size: 15px;
+}
+
+ul.product-details li {
+    margin: 8px 0;
+}
