@@ -11,6 +11,9 @@
         $phone= $row['phone'];
         $address= $row['address'];
     }
+    else{
+        header("location:../");
+    }
     
 ?>
 <!DOCTYPE html>
