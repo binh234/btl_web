@@ -4,9 +4,9 @@
     $emailuser='';
     if(isset( $_SESSION['admin'])){
         $emailuser= $_SESSION['useremail'];
-        $sql ="SELECT * FROM user where email !='$emailuser' ";
+        $sql ="SELECT * FROM `user` inner join userinfo on user.id=userId where user.email !='$emailuser' ";
         $result = mysqli_query($conn,$sql);
-        $users =mysqli_fetch_all($result,MYSQLI_ASSOC); 
+        $users = mysqli_fetch_all($result, MYSQLI_ASSOC); 
     }
     else{
         header("location:../");
@@ -47,7 +47,7 @@
                         <tr>
                             <form action="../server/adminEdit.php" method="GET">
                             <td class="text-center"><?php echo $user['id']; ?></td>
-                            <td class="text-center"><?php echo $user['username']; ?></td>
+                            <td class="text-center"><?php echo $user['name']; ?></td>
                             <td class="text-center"><?php echo $user['email']; ?></td>
                             <td class="text-center">
                             <select name="level" id="level">
