@@ -23,6 +23,12 @@
         mysqli_query($conn,$sql);
         header("location:../client/admin.php");
     }
+    elseif(isset($_GET['emailgetnews']) ){
+        $email=$_GET['emailgetnews'];
+        $sql="DELETE FROM getnews WHERE email='$email'";
+        mysqli_query($conn,$sql);
+        header("location:../admin/get-news.php");
+    }
     else{
         header("location:../client/admin.php");
     }
