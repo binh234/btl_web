@@ -7,9 +7,7 @@
         $phone= $_POST['phone'];
         $adress= $_POST['adress'];
         $year= $_POST['year'];
-        $sql="UPDATE userinfor SET username='$name', year='$year', phone='$phone', address='$adress' WHERE email='$emailuser' ";
-        mysqli_query($conn,$sql);
-        $sql="UPDATE user SET username='$name' WHERE email='$emailuser' ";
+        $sql="UPDATE userinfo SET name='$name', phone='$phone', address='$adress' WHERE email='$emailuser' ";
         mysqli_query($conn,$sql);
         unset($_SESSION['user']);
         $_SESSION['user']=$name;

@@ -1,16 +1,15 @@
 <?php
     session_start();
     include '../include/consql.php';
-    $emailuser=$name=$phone=$adress=$year='';
+    $emailuser=$name=$phone=$address=$year='';
     if(isset( $_SESSION['useremail'])){
         $emailuser= $_SESSION['useremail'];
-        $sql ="SELECT * FROM userinfor where email='$emailuser' ";
+        $sql ="SELECT * FROM userinfo where email='$emailuser' ";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
-        $name= $row['username'];
+        $name= $row['name'];
         $phone= $row['phone'];
-        $adress= $row['address'];
-        $year= $row['year'];
+        $address= $row['address'];
     }
     
 ?>
@@ -35,7 +34,7 @@
                     <h6 class="mb-0  "><?php echo $name;?></h6>
                     <h6 class="mb-0   "><?php echo "Email:".$emailuser;?></h6>
                     <h6 class="mb-0  "><?php echo "Sđt:".$phone;?></h6>
-                    <h6 class="mb-0  "><?php echo "Địa chỉ:".$adress;?></h6> <br>
+                    <h6 class="mb-0  "><?php echo "Địa chỉ:".$address;?></h6> <br>
                     <?php include '../include/changepass.php'; ?>
                 </div>
                 <div class="col-lg-7">
@@ -55,14 +54,11 @@
                                 <h6 class="mb-0 text-sm ">Họ tên </h6>
                             </label> <input class="mb-3" type="text" name="name" value="<?php echo $name;?>" required> </div>
                             <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm ">Năm sinh </h6>
-                            </label> <input class="mb-3" type="text" name="year" value="<?php echo $year;?>" placeholder="Chưa cập nhập năm sinh" required> </div>
-                            <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm ">Số điện thoại </h6>
                             </label> <input class="mb-3" type="text" name="phone" value="<?php echo$phone;?>" placeholder="Chưa cập nhập số điện thoại" required> </div>
                             <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm ">Địa chỉ </h6>
-                            </label> <input class="mb-3" type="text" name="adress" value="<?php echo$adress;?>" placeholder="Chưa cập nhập địa chỉ" required> </div>
+                            </label> <input class="mb-3" type="text" name="adress" value="<?php echo$address;?>" placeholder="Chưa cập nhập địa chỉ" required> </div>
                             <div class="row mb-3 px-3"> 
                                 <button type="submit" class="btn btn-blue text-center">Cập nhập</button> 
                             </div>

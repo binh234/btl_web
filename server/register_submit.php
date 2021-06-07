@@ -22,11 +22,15 @@
         }
         if($check==0){
             $pass=md5($pass);
-            $sql="INSERT INTO user (username,password,email,level) VALUES ('$username','$pass','$email','$level')";
-            mysqli_query($conn,$sql);
-            $sql="INSERT INTO userinfor (username,email) VALUES ('$username','$email')";
-            mysqli_query($conn,$sql);
-            $_SESSION['sussces']="Đăng kí thành công!";
+            $sql="INSERT INTO user (password,email,level) VALUES ('$pass','$email','$level')";
+            if (mysqli_query($conn,$sql) == TRUE) {
+                $id = $conn->insert_id;
+                $sql="INSERT INTO userinfo (userId, name, email, phone, address) VALUES ($id, '$username','$email', '', '')";
+                mysqli_query($conn,$sql);
+                $_SESSION['sussces']="Đăng kí thành công";
+            } else {
+                $_SESSION['sussces']="Đăng kí thất bại!";
+            }
             header("location:../client/register.php");
         }
         

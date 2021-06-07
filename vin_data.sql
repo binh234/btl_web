@@ -62,10 +62,10 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userinfor`
+-- Table structure for table `userinfo`
 --
 
-CREATE TABLE `userinfor` (
+CREATE TABLE `userinfo` (
   `id` int(11) NOT NULL,
   `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
@@ -75,10 +75,10 @@ CREATE TABLE `userinfor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `userinfor`
+-- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfor` (`id`, `email`, `username`, `year`, `phone`, `address`) VALUES
+INSERT INTO `userinfo` (`id`, `email`, `username`, `year`, `phone`, `address`) VALUES
 (1, 'dinhsu081@gmail.com', 'Phan Đình Sự', NULL, '', ''),
 (10, 'suphan081@gmail.com', 'Đình Sự', 2001, '123456', 'TP.HCM'),
 (11, 'nhi123hin@gmail.com', 'Nguyễn Văn A', 2000, '123456', 'HCM'),
@@ -101,9 +101,9 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `userinfor`
+-- Indexes for table `userinfo`
 --
-ALTER TABLE `userinfor`
+ALTER TABLE `userinfo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -123,9 +123,9 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `userinfor`
+-- AUTO_INCREMENT for table `userinfo`
 --
-ALTER TABLE `userinfor`
+ALTER TABLE `userinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 

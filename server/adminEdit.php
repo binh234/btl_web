@@ -11,7 +11,7 @@
         $sql="DELETE FROM user WHERE id='$id'";
         mysqli_query($conn,$sql);
         //var_dump($id);
-        $sql="DELETE FROM userinfor WHERE email='$email'";
+        $sql="DELETE FROM userinfo WHERE email='$email'";
         mysqli_query($conn,$sql);
         header("location:../client/admin.php");
     }
