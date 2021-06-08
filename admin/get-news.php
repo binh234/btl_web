@@ -64,7 +64,7 @@
                                         <tr> 
                                             <th class="table-success text-center" scope="col">Id</th>
                                             <th class="table-success text-center" scope="col">Emai người đăng ký</th>
-                                            <th class="table-success text-center" scope="col">Delete</th>
+                                            <th class="table-success text-center" scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,7 +122,22 @@
     <script>
         $(document).ready(function() {
             $('#nav-get-news').addClass("active");
-            $('#dataTable').DataTable();
+            $('#dataTable').DataTable({
+                language: {
+                    lengthMenu: "Hiển thị _MENU_ hàng mỗi trang",
+                    zeroRecords: "Không tìm thấy dữ liệu",
+                    info: "Trang _PAGE_ của _PAGES_",
+                    infoEmpty: "Không tìm thấy dữ liệu",
+                    infoFiltered: "(filtered from _MAX_ total records)",
+                    search: "Tìm kiếm:",
+                    paginate: {
+                        "first": "Đầu",
+                        "last": "Cuối",
+                        "next": "Sau",
+                        "previous": "Trước"
+                    },
+                },
+            });
         });
 
         function confirmdelete() {

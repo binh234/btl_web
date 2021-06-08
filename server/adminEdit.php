@@ -23,11 +23,26 @@
         mysqli_query($conn,$sql);
         header("location:../client/admin.php");
     }
+//delete getnews
     elseif(isset($_GET['emailgetnews']) ){
         $email=$_GET['emailgetnews'];
         $sql="DELETE FROM getnews WHERE email='$email'";
         mysqli_query($conn,$sql);
         header("location:../admin/get-news.php");
+    }
+// delete customer
+    elseif(isset($_POST['id']) ){
+        $id=$_POST['id'];
+        $sql ="SELECT email FROM userinfo where id='$id' ";
+        $row = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+        $email=$row['email'];
+        $sql="DELETE FROM userinfo WHERE id='$id'";
+        mysqli_query($conn,$sql);
+        $sql="DELETE FROM user WHERE email='$email'";
+        mysqli_query($conn,$sql);
+        $error = "success";
+        $result = array("msg" => $error);
+        echo json_encode($result);
     }
     else{
         header("location:../client/admin.php");

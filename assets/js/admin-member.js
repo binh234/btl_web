@@ -75,7 +75,7 @@ function deleteMember() {
     let data = {
         id: delete_form.elements["id"].value,
     };
-    sendRequest("../server/maintenance/delete_member.php", data);
+    sendRequest("../server/member/delete_member.php", data);
 }
 
 $(document).ready(function() {
