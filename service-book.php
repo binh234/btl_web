@@ -115,15 +115,15 @@ if (isset($_SESSION['user'])) {
                                             <optgroup label="Ô tô">
                                                 <?php
                                                 foreach ($car_result as $car) :
-                                                    echo '<option value="'.$car['id'].'">'.$car['name'].'</option>';
-                                                endforeach;  
+                                                    echo '<option value="' . $car['id'] . '">' . $car['name'] . '</option>';
+                                                endforeach;
                                                 ?>
                                             </optgroup>
                                             <optgroup label="Xe máy">
                                                 <?php
                                                 foreach ($motor_result as $motor) :
-                                                    echo '<option value="'.$motor['id'].'">'.$motor['name'].'</option>';
-                                                endforeach;  
+                                                    echo '<option value="' . $motor['id'] . '">' . $motor['name'] . '</option>';
+                                                endforeach;
                                                 ?>
                                             </optgroup>
                                         </select>
@@ -296,6 +296,7 @@ if (isset($_SESSION['user'])) {
                     })
 
                     $('#showroom').select2({
+                        theme: 'bootstrap4',
                         allowClear: true,
                         scrollAfterSelect: true,
                         width: '100%',
