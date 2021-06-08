@@ -197,8 +197,8 @@ session_start();
     <script src="../assets/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../assets/js/demo/chart-area-demo.js"></script>
-    <script src="../assets/js/demo/chart-bar-demo.js"></script>
+    <script src="../assets/js/chart/chart-area-demo.js"></script>
+    <script src="../assets/js/chart/chart-bar-demo.js"></script>
 
     <script>
         $(document).ready(function() {
