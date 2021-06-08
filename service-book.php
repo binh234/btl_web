@@ -1,5 +1,14 @@
 <?php
-    session_start();
+session_start();
+include 'include/consql.php';
+if (isset($_SESSION['user'])) {
+    $car_sql = "SELECT id, name FROM product WHERE type='car'";
+    $car_result = mysqli_query($conn, $car_sql)->fetch_all(MYSQLI_ASSOC);
+    $motor_sql = "SELECT id, name FROM product WHERE type='motor'";
+    $motor_result = mysqli_query($conn, $motor_sql)->fetch_all(MYSQLI_ASSOC);
+} else {
+    header("location:client/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -27,6 +36,7 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/select2/css/select2.min.css" rel="stylesheet">
+    <link href="assets/vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -63,7 +73,7 @@
         <section id="services" class="services">
             <div class="container">
                 <div class="row">
-                    <form class="w-100" action="#" method="post">
+                    <form class="validate-form w-100" action="server/maintenance/add_schedule.php" method="post" id="book-form">
                         <div class="row w-100">
                             <div class="col-lg-6 col-12 p-4" data-aos="fade-up">
                                 <label class="form-title d-flex">
@@ -80,7 +90,7 @@
                                 <div class="row required">
                                     <label class="col-lg-2 col-12 col-form-label" for="phone">SĐT</label>
                                     <div class="col-lg-10 col-12 form-group">
-                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Số điện thoại" data-rule="minlen:6" data-msg="Vui lòng nhập ít nhất 6 ký tự" />
+                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Số điện thoại" data-rule="phone" data-msg="Vui lòng nhập số điện thoại hợp lệ" />
                                         <div class="validate"></div>
                                     </div>
                                 </div>
@@ -103,18 +113,18 @@
                                     <div class="col-lg-10 col-12 form-group">
                                         <select class="custom-select w-100" id="product" name="product">
                                             <optgroup label="Ô tô">
-                                                <option value="e34">VF e34</option>
-                                                <option value="FADIL">FADIL</option>
-                                                <option value="President">President</option>
-                                                <option value="LUX-A">LUX A2.0</option>
-                                                <option value="LUX-SA">LUX SA2.0</option>
+                                                <?php
+                                                foreach ($car_result as $car) :
+                                                    echo '<option value="'.$car['id'].'">'.$car['name'].'</option>';
+                                                endforeach;  
+                                                ?>
                                             </optgroup>
                                             <optgroup label="Xe máy">
-                                                <option value="Theon">Theon</option>
-                                                <option value="KlaraS">Klara S</option>
-                                                <option value="Felix">Feliz</option>
-                                                <option value="Impes">Impes</option>
-                                                <option value="Ludo">Ludo</option>
+                                                <?php
+                                                foreach ($motor_result as $motor) :
+                                                    echo '<option value="'.$motor['id'].'">'.$motor['name'].'</option>';
+                                                endforeach;  
+                                                ?>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -145,19 +155,19 @@
                                     <label class="col-lg-2 col-12 col-form-label" for="service">Dịch vụ</label>
                                     <div class="col-lg-10 col-12 form-group">
                                         <select class="custom-select w-100" id="service" name="service">
-                                            <option value="quick">Bảo dưỡng nhanh</option>
-                                            <option value="plan">Bảo dưỡng định kỳ</option>
-                                            <option value="extend">Gia hạn bảo hành</option>
-                                            <option value="care">Chăm sóc, làm đẹp xe</option>
-                                            <option value="replace">Thay thế phụ tùng</option>
-                                            <option value="other">Dịch vụ khác</option>
+                                            <option value="Bảo dưỡng nhanh">Bảo dưỡng nhanh</option>
+                                            <option value="Bảo dưỡng định kỳ">Bảo dưỡng định kỳ</option>
+                                            <option value="Gia hạn bảo hành">Gia hạn bảo hành</option>
+                                            <option value="Chăm sóc, làm đẹp xe">Chăm sóc, làm đẹp xe</option>
+                                            <option value="Thay thế phụ tùng">Thay thế phụ tùng</option>
+                                            <option value="Dịch vụ khác">Dịch vụ khác</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label class="col-lg-2 col-12 col-form-label" for="note">Ghi chú</label>
                                     <div class="col-lg-10 col-12 form-group">
-                                        <textarea name="note" class="form-control" id="note" placeholder="Cụ thể yêu cầu mong muốn hỗ trợ..." rows="4"></textarea>
+                                        <textarea name="note" class="form-control" id="note" placeholder="Cụ thể yêu cầu mong muốn hỗ trợ..." rows="4" maxlength="500"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -168,33 +178,11 @@
                                     <span>Chọn địa điểm, đặt lịch</span>
                                 </label>
                                 <div class="row required">
-                                    <label class="col-lg-2 col-12 col-form-label">Tại</label>
+                                    <label class="col-lg-2 col-12 col-form-label">Showroom</label>
                                     <div class="col-lg-10 col-12 form-group">
                                         <div class="row">
-                                            <div class="col-lg-6 col-12 pr-3 pr-lg-1">
-                                                <select name="city" id="city" class="placeholder-select w-100" data-placeholder="Tỉnh Thành">
-                                                    <option value="HN">Hà Nội</option>
-                                                    <option value="HCM">Hồ Chí Minh</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-6 col-12 pl-3 pl-lg-0 mt-2 mt-lg-0">
-                                                <select name="state" id="district" class="placeholder-select w-100" data-placeholder="Quận Huyện">
-                                                    <optgroup label="Hà Nội">
-                                                        <option value="GiaLam">Gia Lâm</option>
-                                                        <option value="BacTuLiem">Bắc Từ Liêm</option>
-                                                    </optgroup>
-                                                    <optgroup label="Hồ Chí Minh">
-                                                        <option value="ThuDuc">Thủ Đức</option>
-                                                        <option value="Q2">Quận 2</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
                                             <div class="col-lg-12 col-12 mt-2">
-                                                <select name="showroom" id="showroom" class="placeholder-select w-100" data-placeholder="Showroom">
-                                                <option value="showroom1">Showroom Phạm Văn Đồng 166 Phạm Văn Đồng, P. Xuân Đỉnh, Q. Bắc Từ Liêm, TP.Hà Nội</option>
-                                                <option value="showroom2">Showroom Ocean Park Tầng 1, TTTM Vincom Ocean Park, Kiêu Kỵ, Gia Lâm, Hà Nội</option>
-                                                <option value="showroom3">Showroom Thảo Điền Tầng L1, TTTM Vincom Mega Mall Thảo Điền, 159 Xa lộ Hà Nội, P.Thảo Điền, Q.2, Hồ Chí Minh</option>
-                                                </select>
+                                                <select name="showroom" id="showroom" class="placeholder-select w-100" data-placeholder="Showroom"></select>
                                             </div>
                                         </div>
                                     </div>
@@ -205,28 +193,28 @@
                                         <div class="row no-gutters">
                                             <div class="col-lg-6 col-12 pr-0 pr-lg-1">
                                                 <div class="input-group">
-                                                    <input type="date" class="form-control w-100" id="scheduleDate" name="scheduleDate">
+                                                    <input type="date" class="form-control w-100" id="scheduleDate" name="scheduleDate" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-12 mt-2 mt-lg-0">
                                                 <select class="form-control w-100" name="scheduleTime" id="scheduleTime">
-                                                    <option value="0830">8:30</option>
-                                                    <option value="0900">9:00</option>
-                                                    <option value="0930">9:30</option>
-                                                    <option value="1000">10:00</option>
-                                                    <option value="1030">10:30</option>
-                                                    <option value="1100">11:00</option>
-                                                    <option value="1130">11:30</option>
-                                                    <option value="1300">13:00</option>
-                                                    <option value="1330">13:30</option>
-                                                    <option value="1400">14:00</option>
-                                                    <option value="1430">14:30</option>
-                                                    <option value="1500">15:00</option>
-                                                    <option value="1530">15:30</option>
-                                                    <option value="1600">16:00</option>
-                                                    <option value="1630">16:30</option>
-                                                    <option value="1700">17:00</option>
-                                                    <option value="1730">17:30</option>
+                                                    <option value="08:30">8:30</option>
+                                                    <option value="09:00">9:00</option>
+                                                    <option value="09:30">9:30</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="10:30">10:30</option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="11:30">11:30</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="13:30">13:30</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="14:30">14:30</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="15:30">15:30</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="16:30">16:30</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="17:30">17:30</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -260,22 +248,82 @@
     <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
     <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="assets/vendor/select2/js/select2.full.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/validate-form.js"></script>
     <script>
+        function getUserInfo() {
+            $.ajax({
+                url: "server/info/get_user_info.php",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    // console.log(data);
+                    if (data['msg'] == 'success') {
+                        user_info = data['data']
+                        $('#name').val(user_info['name']);
+                        $('#email').val(user_info['email']);
+                        $('#phone').val(user_info['phone']);
+                    }
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            })
+        }
+
+        function getShowroom() {
+            $.ajax({
+                url: "server/showroom/get_showroom.php",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    // console.log(data);
+                    showroom = document.getElementById("showroom");
+
+                    while (showroom.childNodes.length > 0) {
+                        showroom.removeChild(showroom.lastChild);
+                    }
+
+                    data["data"].forEach(function(item, index) {
+                        option = document.createElement("option");
+                        option.value = item["id"];
+                        option.text = item["address"];
+                        showroom.appendChild(option);
+                    })
+
+                    $('#showroom').select2({
+                        allowClear: true,
+                        scrollAfterSelect: true,
+                        width: '100%',
+                    });
+                }
+            })
+        }
+
         $(document).ready(function() {
             $('.placeholder-select').select2({
+                theme: 'bootstrap4',
                 allowClear: true,
                 scrollAfterSelect: true,
                 width: '100%',
             });
             $("#nav-services").addClass("active");
             $("#nav-maintenance").addClass("active");
+
+            getUserInfo();
+            getShowroom();
+            // $('#book-form').submit(function(e) {
+            //     e.preventDefault();
+            //     console.log($(this).serialize());
+            // })
         });
     </script>
 
 </body>
 
 </html>
+<?php mysqli_close($conn); ?>

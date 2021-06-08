@@ -1,5 +1,29 @@
 <?php
-    session_start();
+session_start();
+include 'include/consql.php';
+
+if (isset($_SESSION['useremail'])) {
+    $emailuser = $_SESSION['useremail'];
+    $sql = "SELECT * FROM userinfo where email='$emailuser' ";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $infoId = $row['id'];
+    $mem_sql = "SELECT * FROM member where infoId='$infoId'";
+    $result = mysqli_query($conn, $mem_sql);
+    if (mysqli_num_rows($result) == 0) {
+        $type = "None";
+        $expireDate = date('Y-m-d');
+        $mem_id = -1;
+    } else {
+        $mem_row = mysqli_fetch_assoc($result);
+        $type = $mem_row['type'];
+        $date = new Datetime($mem_row['expireDate']);
+        $expireDate = $date->format('Y-m-d');
+        $mem_id = $mem_row['id'];
+    }
+} else {
+    header("location:client/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -63,7 +87,9 @@
 
                 <div class="row no-gutters">
 
-                    <div class="col-lg-4 box">
+                    <div class="col-lg-4 box <?php if ($type == "Member") {
+                                                    echo 'featured';
+                                                } ?>">
                         <h3>Thành viên</h3>
                         <h4>0 <sup>đ</sup><span> một tháng</span></h4>
                         <ul>
@@ -74,10 +100,20 @@
                             <li class="na"><i class="bx bx-x"></i> Đăng ký lái thử miễn phí</li>
                             <li class="na"><i class="bx bx-x"></i> Bảo hành tận nơi</li>
                         </ul>
-                        <a href="#" class="buy-btn">Kích hoạt</a>
+                        <?php
+                        if ($type == "Member" && $expireDate > date('Y-m-d')) {
+                            echo '<button class="btn buy-btn mb-2" data-type="Member">Gia hạn</button>';
+                            echo "<p>Hết hạn vào $expireDate</p>";
+                        ?>
+                        <?php
+                        } else {
+                            echo '<button href="#" class="btn buy-btn" data-type="Member">Kích hoạt</button>';
+                        } ?>
                     </div>
 
-                    <div class="col-lg-4 box featured">
+                    <div class="col-lg-4 box <?php if ($type == "VIP" || $type == "None") {
+                                                    echo 'featured';
+                                                } ?>">
                         <h3>VIP</h3>
                         <h4>3 <sup>triệu</sup><span> một tháng</span></h4>
                         <ul>
@@ -88,10 +124,20 @@
                             <li><i class="bx bx-check"></i> Đăng ký lái thử miễn phí 1 ngày / tháng</li>
                             <li class="na"><i class="bx bx-x"></i> Bảo hành tận nơi</li>
                         </ul>
-                        <a href="#" class="buy-btn">Kích hoạt</a>
+                        <?php
+                        if ($type == "VIP" && $expireDate > date('Y-m-d')) {
+                            echo '<button class="btn buy-btn mb-2" data-type="VIP">Gia hạn</button>';
+                            echo "<p>Hết hạn vào $expireDate</p>";
+                        ?>
+                        <?php
+                        } else {
+                            echo '<button href="#" class="btn buy-btn" data-type="VIP">Kích hoạt</button>';
+                        } ?>
                     </div>
 
-                    <div class="col-lg-4 box">
+                    <div class="col-lg-4 box <?php if ($type == "VIP365") {
+                                                    echo 'featured';
+                                                } ?>">
                         <h3>VIP365</h3>
                         <h4>32 <sup>triệu</sup><span> một năm</span></h4>
                         <ul>
@@ -102,7 +148,15 @@
                             <li><i class="bx bx-check"></i> Đăng ký lái thử miễn phí 3 ngày / tháng</li>
                             <li><i class="bx bx-check"></i> Bảo hành tận nơi</li>
                         </ul>
-                        <a href="#" class="buy-btn">Kích hoạt</a>
+                        <?php
+                        if ($type == "VIP365" && $expireDate > date('Y-m-d')) {
+                            echo '<button class="btn buy-btn mb-2" data-type="VIP365">Gia hạn</button>';
+                            echo "<p>Hết hạn vào $expireDate</p>";
+                        ?>
+                        <?php
+                        } else {
+                            echo '<button href="#" class="btn buy-btn" data-type="VIP365">Kích hoạt</button>';
+                        } ?>
                     </div>
 
                 </div>
@@ -126,7 +180,8 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
     <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
@@ -134,9 +189,41 @@
     <script>
         $(document).ready(function() {
             $("#nav-pricing").addClass("active");
+
+            $(".buy-btn").on("click", function() {
+                new_type = $(this).data("type");
+                old_type = '<?php echo $type ?>';
+                message = `Bạn đang thực hiện thay đổi cấp độ thẻ thành viên. Thao tác này có thể làm thay đổi ngày hết hạn và các ưu đãi của thẻ:
+                Nâng cấp thẻ: Làm mới ngày hết hạn của thẻ
+                Hạ cấp thẻ: Làm mới các ưu đãi của thẻ
+Không thể quay lại sau khi thực hiện. Bạn muốn tiếp tục?`
+                if (new_type == old_type || old_type == "None" || confirm(message)) {
+                    $.ajax({
+                        url: "server/member/register_member.php",
+                        dataType: "json",
+                        type: "POST",
+                        data: {
+                            id: "<?php echo $mem_id ?>",
+                            info: '<?php echo $infoId ?>',
+                            type: new_type,
+                            old_type: '<?php echo $type ?>',
+                            expireDate: '<?php echo $expireDate ?>'
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            if (data["msg"] == "success") {
+                                location.reload();
+                            } else {
+                                alert(data["msg"]);
+                            }
+                        }
+                    })
+                }
+            })
         })
     </script>
 
 </body>
 
 </html>
+<?php mysqli_close($conn); ?>

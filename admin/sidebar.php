@@ -33,6 +33,13 @@
         </a>
     </li>
 
+    <li class="nav-item" id="nav-sale">
+        <a class="nav-link" href="sale-history.php">
+            <i class="fas fa-fw fa-history"></i>
+            <span>Lịch sử bán hàng</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -97,10 +104,17 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" id="nav-showroom">
+        <a class="nav-link" href="showroom.php">
+            <i class="fas fa-fw fa-building"></i>
+            <span>Showroom</span>
+        </a>
+    </li>
+
     <li class="nav-item" id="nav-maintenance">
         <a class="nav-link" href="maintenance.php">
-            <i class="fas fa-fw fa-cogs"></i>
-            <span>Bảo dưỡng</span>
+            <i class="fas fa-fw fa-calendar"></i>
+            <span>Lịch hẹn</span>
         </a>
     </li>
 
