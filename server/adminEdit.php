@@ -10,19 +10,24 @@
         $email=$row['email'];
         $sql="DELETE FROM user WHERE id='$id'";
         mysqli_query($conn,$sql);
-        //var_dump($id);
         $sql="DELETE FROM userinfo WHERE email='$email'";
         mysqli_query($conn,$sql);
         header("location:../client/admin.php");
     }
 
 //change level
-    elseif(isset($_GET['level']) && isset($_GET['id']) ){
+    elseif(isset($_GET['level']) && isset($_GET['email']) ){
         $level=$_GET['level'];
-        $id=$_GET['id'];
-        $sql = "UPDATE user SET level='$level' WHERE id='$id'";
+        $email=$_GET['email'];
+        $sql = "UPDATE user SET level='$level' WHERE email='$email'";
         mysqli_query($conn,$sql);
         header("location:../client/admin.php");
+    }
+    elseif(isset($_GET['emailgetnews']) ){
+        $email=$_GET['emailgetnews'];
+        $sql="DELETE FROM getnews WHERE email='$email'";
+        mysqli_query($conn,$sql);
+        header("location:../admin/get-news.php");
     }
     else{
         header("location:../client/admin.php");
