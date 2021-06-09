@@ -121,7 +121,10 @@
                     .show("blind");
             }
         });
-        if (ferror) return false;
+        if (ferror) {
+            alert("Vui lòng kiểm tra lại dữ liệu nhập vào");
+            return false;
+        }
 
         var this_form = $(this);
         var action = $(this).attr("action");
@@ -143,22 +146,7 @@
             })
             .fail(function(data) {
                 console.log(data);
-                var error_msg = "Form submission failed!<br>";
-                if (data.statusText || data.status) {
-                    error_msg += "Status:";
-                    if (data.statusText) {
-                        error_msg += " " + data.statusText;
-                    }
-                    if (data.status) {
-                        error_msg += " " + data.status;
-                    }
-                    error_msg += "<br>";
-                }
-                if (data.responseText) {
-                    error_msg += data.responseText;
-                }
-                this_form.find(".loading").slideUp();
-                this_form.find(".error-message").slideDown().html(error_msg);
+                alert("Không thể gửi dữ liệu lên server. Vui lòng thử lại sau!");
             });
     }
 })(jQuery);
