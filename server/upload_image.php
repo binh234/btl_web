@@ -1,5 +1,6 @@
 <?php
-$target_dir = "uploads/";
+$target_dir = "../../uploads/";
+if (isset($_FILES["image"]) && $_FILES["image"]['name'] != "") {
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -14,12 +15,6 @@ if(isset($_POST["submit"])) {
     echo "File is not an image.";
     $uploadOk = 0;
   }
-}
-
-// Check if file already exists
-if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
-  $uploadOk = 0;
 }
 
 // Check file size
@@ -45,5 +40,8 @@ if ($uploadOk == 0) {
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
+}
+} else {
+    $uploadOk = 0;
 }
 ?>

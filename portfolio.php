@@ -66,24 +66,6 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÒNG SUV</h3>
-                                    <p class="subtitle">CÙNG BẠN BỨT PHÁ MỌI GIỚI HẠN</p>
-                                    <p class="product-name">VF e34</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Ô tô điện thông minh khởi tạo tương lai di chuyển xanh</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Hệ thống pin tiên tiến, chính sách thuê pin độc đáo</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Chi phi vận hành, bảo dưỡng rẻ hơn xe xăng</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/oto/vfe34.png" class="card-img-bottom" alt="vfe34">
-                            <a href="portfolio-details.php" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
 
                     <?php foreach($otos as $oto): ?>
                     <div class="col-lg-4 col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
@@ -106,83 +88,6 @@
                         </div>
                     </div>
                     <?php endforeach; ?>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÒNG SUV </h3>
-                                    <p class="subtitle">DẤU ẤN NGƯỜI THỦ LĨNH</p>
-                                    <p class="product-name">PRESIDENT</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Lời khẳng định về năng lực sản xuất ô tô của Vinfast</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Thiết kế uy lực đầy kiểu hãnh, tôn dấu ấn tinh hoa hoa của chủ nhân</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Khả năng vận hành vượt trội với động cơ V8 6.2L mạnh mẽ bậc nhất thế giới</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/oto/president.png" class="card-img-bottom" alt="president">
-                            <a href="portfolio-details.php" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÒNG SUV </h3>
-                                    <p class="subtitle">CHINH PHỤC MỌI CUNG ĐƯỜNG</p>
-                                    <br>
-                                    <p class="product-name">LUX SA2.0</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế sang trọng, mạnh mẽ</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Hệ dẫn động 4 bánh toàn thời gian cho cảm giác lái đầm chắc mà êm ái</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Khung gầm liền khối vững chắc chuẩn </li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/oto/luxsa20.png" class="card-img-bottom" alt="lux-sa20">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÒNG SEDAN</h3>
-                                    <p class="subtitle">TẬN HƯỞNG TỪNG KHOẢNH KHẮC</p>
-                                    <p class="product-name">LUX A2.0</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế sang trọng, tinh tế</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Động cơ tăng áp mạnh mẽ</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Hệ dẫn động cầu sau và treo khí nén cho cảm giác lái thể thao </li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/oto/luxa20.png" class="card-img-bottim" alt="lux-a20">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÒNG HATCHBACK </h3>
-                                    <p class="subtitle">TỐI ƯU MỌI TRẢI NGHIỆM</p>
-                                    <p class="product-name">FADIL</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Xe đô thị cỡ nhỏ hoàn hảo</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Khả năng vận hành mạnh mẽ dẫn đầu phân khúc</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Hệ thống giải trí và kết nối hiện đại </li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/oto/fadil.png" class="card-img-bottom" alt="fadil">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
 
                     <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
                         <div class="card" data-aos="fade-up" data-aos-delay="400">

@@ -7,7 +7,7 @@
   }
   else if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $result = mysqli_query($conn, "SELECT * FROM product WHERE id='$id'")->fetch_all(MYSQLI_ASSOC);
+    $result = mysqli_query($conn, "SELECT * FROM product WHERE id='$id'")->fetch_assoc();
   }
   else {
     $result = mysqli_query($conn, "SELECT * FROM product")->fetch_all(MYSQLI_ASSOC);

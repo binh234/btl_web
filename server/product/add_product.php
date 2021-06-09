@@ -3,10 +3,12 @@ include '../../include/consql.php';
 
 include '../upload_image.php';
 
+$id = $_POST['id'];
 $name = $_POST['name'];
 $model = $_POST['model'];
 $title = $_POST['title'];
 $engine = $_POST['engine'];
+$gear = $_POST['gear'];
 $color = $_POST['color'];
 $wattage = $_POST['wattage'];
 $price = $_POST['price'];
@@ -23,11 +25,18 @@ if ($uploadOk == 1) {
     $image = "";
 }
 
-$insert_sql = mysqli_prepare($conn, "INSERT INTO product (name, model, title, engine, color, wattage, price, width, height, length, maxVelocity, consume, type, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-$insert_sql->bind_param('sssssiiiiiiiss', $name, $model, $title, $engine, $color, $wattage, $price, $width, $height, $length, $maxVelocity, $consume, $type, $image);
-$res = $insert_sql->execute();
-
 $error = "";
+
+if ($id == "-1") {
+    $insert_sql = mysqli_prepare($conn, "INSERT INTO product (name, model, title, engine, gear, color, wattage, price, width, height, length, maxVelocity, consume, type, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $insert_sql->bind_param('ssssssiiiiiiiss', $name, $model, $title, $engine, $gear, $color, $wattage, $price, $width, $height, $length, $maxVelocity, $consume, $type, $image);
+    $res = $insert_sql->execute();
+
+} else {
+    $insert_sql = mysqli_prepare($conn, "UPDATE product  SET name = ?, model = ?, title = ?, engine = ?, gear=?, color = ?, wattage = ?, price = ?, width = ?, height = ?, length = ?, maxVelocity = ?, consume = ?, type = ?, image = ? WHERE id=?");
+    $insert_sql->bind_param('ssssssiiiiiiissi', $name, $model, $title, $engine, $gear, $color, $wattage, $price, $width, $height, $length, $maxVelocity, $consume, $type, $image, $id);
+    $res = $insert_sql->execute();
+}
 if (false === $res) {
     $error = "Error: " . htmlspecialchars($insert_sql->error);
 }
@@ -41,4 +50,3 @@ $result = array("msg" => $error);
 echo json_encode($result);
 
 mysqli_close($conn);
-?>
