@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if(isset( $_SESSION['getnews'])){
+        echo "<script>alert('Đăng ký thành công!');</script>"; 
+        unset($_SESSION['getnews']);
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="vi">

@@ -10,14 +10,14 @@
                                         ?>
                                     </a>
                                 </h6>
-                            </label> <input class="mb-3" type="text" name="email" placeholder="Nhập địa chỉ Email"> </div>
+                            </label> <input class="mb-3" type="text" name="email" placeholder="Nhập địa chỉ Email" required> </div>
                             <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm ">Họ tên
                                 </h6>
-                            </label> <input class="mb-3" type="text" name="account" placeholder="Nhập họ tên"> </div>
+                            </label> <input class="mb-3" type="text" name="account" placeholder="Nhập họ tên" required> </div>
                             <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Mật khẩu</h6>
-                            </label> <input class="mb-3" type="password" name="password" placeholder="Nhập mật khẩu"> </div>
+                            </label> <input class="mb-3" type="password" name="password" placeholder="Nhập mật khẩu" required> </div>
                             <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Nhập lại mật khẩu
                                     <a class="text-danger">
@@ -29,7 +29,7 @@
                                         ?>
                                     </a>
                                 </h6>
-                            </label> <input class="mb-3" type="password" name="repass" placeholder="Nhập lại mật khẩu"> </div>
+                            </label> <input class="mb-3" type="password" name="repass" placeholder="Nhập lại mật khẩu" required> </div>
                             <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Đăng ký</button> </div>
                             <div class="row mb-4 px-3 text-center text-primary">
                                 <?php

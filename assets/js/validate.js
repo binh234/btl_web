@@ -3,7 +3,7 @@ function validate() {
 
     let account = document.Form.account.value;
     if (account.length < 6) {
-        alert("Tài khoản phải có ít nhất 6 kí tự");
+        alert("Họ tên phải có ít nhất 6 kí tự");
         return false;
     }
 
