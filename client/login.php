@@ -26,8 +26,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="card2 card border-0 px-4 py-5">
-                        <div class="row mb-4 px-3">
-                            <img src="../assets/img/login/logo_login.png" class="imagelogo">
+                        <div class="row mb-4 px-3 text-center">
+                            <a href="../index.php">
+                                <img src="../assets/img/login/logo_login.png" class="imagelogo">
+                            </a>
                         </div>
                         <div class="row px-3 mb-4 "> 
                             <h5 class="mb-0  text-center ">Đăng nhập</h5>
