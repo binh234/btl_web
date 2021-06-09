@@ -1,5 +1,9 @@
 <?php
     session_start();
+    include 'include/consql.php';
+    $sql ="SELECT * FROM `product` where type ='motor' ";
+    $result = mysqli_query($conn,$sql);
+    $motors = mysqli_fetch_all($result, MYSQLI_ASSOC); 
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -101,6 +105,28 @@
                             <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
                         </div>
                     </div>
+
+                    <?php foreach($motors as $moto): ?>
+                        <div class="col-lg-4 col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                        <div class="card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <div class="product-title">
+                                    <h3>DÒNG <?php  echo $moto['model'];?> </h3>
+                                    <p class="subtitle"><?php  echo $moto['title'];?></p>
+                                    <p class="product-name"><?php  echo $moto['name'];?></p>
+                                </div>
+                                <ul class="product-details">
+                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Vận hành êm ái, hai chế độ lái Eco và Sport linh hoạt</li>
+                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Công nghệ <?php  echo $moto['gear'].", động cơ ".$moto['engine'];?>, tiêu chuẩn chống nước IP57</li>
+                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Kích thước: <?php  echo $moto['height']."x". $moto['width']."x".$moto['length'];?> </li>
+                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Giá bán: <?php  echo $moto['price']."VNĐ";?> </li>
+                                </ul>
+                            </div>
+                            <img src="assets/img/xedien/feliz.png" class="card-img-bottom" alt="...">
+                            <a href="portfolio-details.php" class="btn btn-detail">Chi tiết</a>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
 
                     <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 d-flex align-items-stretch">
                         <div class="card" data-aos="fade-up" data-aos-delay="200">
