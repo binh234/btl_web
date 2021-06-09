@@ -66,46 +66,9 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>CÔNG NGHỆ BỨT PHÁ TRẢI NGHIỆM ĐỈNH CAO</h3>
-                                    <p class="product-name">THEON</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Vận hành mạnh mẽ, vận tốc lên tới 90km/h</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Hệ thống phanh ABS 2 kênh, chuẩn chống nước IP67</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Công nghệ bứt phá với hệ thống PAAK, smart key, tích hợp eSIM</li>
-                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Công nghệ pin Lithium tiên tiến</li>
+                    
 
-
-                                </ul>
-                            </div>
-                            <img src="assets/img/xedien/THEON.png" class="card-img-bottom" alt="...">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>SỐNG XANH THANH LỊCH</h3>
-                                    <p class="product-name">FELIZ</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế thời thượng</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Vận hành êm ái, hai chế độ lái Eco và Sport linh hoạt</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Vận tốc tối đa 60km/h, quãng đường lên tới 90km</li>
-                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Cốp xe rộng tới 20 lít, tiêu chuẩn chống nước IP67</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/xedien/feliz.png" class="card-img-bottom" alt="...">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
+                    
                     <?php foreach($motors as $moto): ?>
                         <div class="col-lg-4 col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
                         <div class="card" data-aos="fade-up" data-aos-delay="100">
@@ -128,76 +91,11 @@
                     </div>
                     <?php endforeach; ?>
 
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>KHỞI ĐẦU PHONG CÁCH MỚI </h3>
-                                    <p class="product-name">KLARA S</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế sang trọng, tôn vinh vóc dáng Việt</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Vận hành mạnh mẽ, quãng đường di chuyển tới 120km</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Công nghệ thông minh tích hợp eSIM</li>
-                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Tiêu chuẩn chống nước IP57</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/xedien/klara_s.png" class="card-img-bottom" alt="...">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
+                    
 
-                    <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>DÁNG SÀNH ĐIỆU, KIỂU CHẤT CHƠI</h3>
-                                    <p class="product-name">IMPES</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế sành điệu</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Tính năng thông minh vượt trội</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Vận hành êm ái, quãng đường di chuyển lên tới 70km</li>
-                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> Công nghệ pin Lithium bền bỉ, tiêu chuẩn chống nước IP57</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/xedien/impes.png" class="card-img-bottom" alt="...">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
+                    
 
-                    <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>TOẢ CHẤT RIÊNG - BẬT CÁ TÍNH</h3>
-                                    <p class="product-name">LUDO</p>
-                                </div>
-                                <ul class="product-details">
-                                    <li data-aos="fade-up"><i class="icofont-check-circled"></i> Thiết kế thể thao và cá tính</li>
-                                    <li data-aos="fade-up" data-aos-delay="100"><i class="icofont-check-circled"></i> Tính năng thông minh vượt trội</li>
-                                    <li data-aos="fade-up" data-aos-delay="200"><i class="icofont-check-circled"></i> Vận hành mạnh mẽ, vận tốc lên tới 49km/h</li>
-                                    <li data-aos="fade-up" data-aos-delay="300"><i class="icofont-check-circled"></i> ông nghệ pin Lithium bền bỉm, tiêu chuẩn chống nước IP57</li>
-                                </ul>
-                            </div>
-                            <img src="assets/img/xedien/ludo.png" class="card-img-bottom" alt="...">
-                            <a href="portfolio-details.html" class="btn btn-detail">Chi tiết</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                        <div class="card" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h3>HÀNH TRÌNH CHINH PHỤC THẾ GIỚI</h3>
-                                    <p class="text-justify">VinFast, thương hiệu ô tô Việt thuộc Tập đoàn Vingroup là điển hình tiêu biểu của việc nhanh chóng phục hồi và có tiến bước nhanh chóng sau khi Việt Nam thành công chống dịch Covid...
-                                    </p>
-                                    <p class="text-center">- Bloomberg -</p>
-                                </div>
-                            </div>
-                            <img src="assets/img/xedien/vinfast.png" class="card-img-bottom" alt="...">
-                        </div>
-                    </div>
+                    
 
                 </div>
 
