@@ -32,6 +32,7 @@
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 
     <!-- Template Main CSS File -->
