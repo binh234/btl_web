@@ -1,6 +1,10 @@
 <?php
 session_start();
-$id = $_GET['id'] || -1;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    $id = -1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -216,6 +220,10 @@ $id = $_GET['id'] || -1;
         }
 
         function getProductInfo() {
+            var id = "<?php echo $id ?>";
+            if (id == "-1") {
+                return;
+            }
             $.ajax({
                 url: "../server/product/get_all_product.php?id=" + "<?php echo $id ?>",
                 type: "GET",
